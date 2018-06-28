@@ -8,7 +8,7 @@ def call(env)
      if @@items.include?(item)
        item.price
      else
-     resp.status = 404
+     resp.status = 400
      resp.write "Item not found."
     end
    else
