@@ -5,6 +5,7 @@ def call(env)
    req = Rack::Request.new(env)
    if req.path.match(/items/)
      item = req.params["item"]
+     binding.pry
      if @@items.include?(item)
        item.price
      else
