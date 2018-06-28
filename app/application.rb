@@ -6,6 +6,7 @@ def call(env)
    @@items = []
    if req.path.match(/items/)
      item = req.params["item"]
+     binding.pry
      if @@items.include?(item)
        item.price
      else
