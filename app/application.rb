@@ -4,12 +4,17 @@ def call(env)
    @@items = []
    if req.path=="/items"
      item = req.params["item"]
-     resp.write "You requested the songs"
+     if @@items.include?(item)
+       item.price
+     else 
+     resp.status = 404
+     resp.write "Item unavialable."
+    end
    else
      resp.write "Route not found"
      resp.status = 404
    end
 
    resp.finish
- end
+ 
 end
