@@ -4,7 +4,6 @@ def call(env)
    resp = Rack::Response.new
    req = Rack::Request.new(env)
    @@items = []
-   binding.pry
    if req.path=="/items"
      item = req.params["item"]
      if @@items.include?(item)
