@@ -6,7 +6,7 @@ def call(env)
      item = req.params["item"]
      if @@items.include?(item)
        item.price
-     else 
+     else
      resp.status = 404
      resp.write "Item unavialable."
     end
@@ -16,5 +16,5 @@ def call(env)
    end
 
    resp.finish
- 
+
 end
