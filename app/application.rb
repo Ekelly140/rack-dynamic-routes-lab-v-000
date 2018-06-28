@@ -5,7 +5,7 @@ def call(env)
    req = Rack::Request.new(env)
    @@items = []
    binding.pry
-   if req.path=="/items"
+   if req.path.match(/items/)
      item = req.params["item"]
      if @@items.include?(item)
        item.price
@@ -22,3 +22,4 @@ def call(env)
 
 end
 end
+
