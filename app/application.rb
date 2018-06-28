@@ -9,7 +9,7 @@ def call(env)
        item.price
      else
      resp.status = 404
-     resp.write "Item unavialable."
+     resp.write "Item not found."
     end
    else
      resp.write "Route not found"
