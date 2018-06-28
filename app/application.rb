@@ -6,7 +6,7 @@ def call(env)
    if req.path.match(/items/)
      item = req.path.split("/items/").last
      binding.pry
-     if @@items.include?(name: item)
+     if @@items.any?{|items|items.name == item}
        item.price
      else
      resp.status = 400
